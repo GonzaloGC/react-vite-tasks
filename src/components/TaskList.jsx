@@ -1,3 +1,5 @@
+import TaskCard from './TaskCard'
+
 function TaskList({tasks}) {
   
   if (tasks.length === 0) {
@@ -6,11 +8,8 @@ function TaskList({tasks}) {
 
   return (
     <div>
-      {tasks.map((tasks) => (
-        <div key={tasks.id}>
-          <h1>{tasks.title}</h1>
-          <p>{tasks.description}</p>
-        </div>
+      {tasks.map((task) => (
+        <TaskCard key={task.id} task={task} />
       ))}
     </div>
   );
